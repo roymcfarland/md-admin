@@ -7,7 +7,7 @@
 		  <span flex></span>
 		  <md-button>Dashboard</md-button>
 		  <md-button ng-click="openLeftMenu()">Menu</md-button>
-		  <md-button ng-click="logout()">Logout</md-button>
+		  <md-button ng-click="doLogout()">Logout</md-button>
 		</div>
 	</md-toolbar>
 	<md-sidenav md-component-id="left" class="md-sidenav-left">
@@ -20,6 +20,9 @@
 	  	</md-card>
 	  	<md-card ng-click="goToStreams()" class="md-whiteframe-z2">
 	  		<p layout layout-align="center center">Manage Streams</p>
+	  	</md-card>
+	  	<md-card ng-click="goToCategories()" class="md-whiteframe-z2">
+	  		<p layout layout-align="center center">Manage Categories</p>
 	  	</md-card>
 	  </md-content>
 	</md-sidenav>
