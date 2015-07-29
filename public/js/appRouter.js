@@ -9,8 +9,13 @@ appRouter.config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider
 		.state('login', {
 			url: '/login',
-			templateUrl: 'views/login.html',
-			controller: 'LoginController'
+			templateUrl: '../views/login.html',
+			controller: 'loginController'
+		})
+		.state('dashboard', {
+			url: '/dashboard',
+			templateUrl: '../views/dashboard.html',
+			controller: 'dashboardController'
 		})
 
 });

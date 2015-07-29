@@ -1,11 +1,15 @@
 var loginCtrl = angular.module('loginCtrl', []);
 
-loginCtrl.controller('LoginController', ['$scope', '$state', function($scope, $state) {
+loginCtrl.controller('loginController', ['$scope', '$state', '$http', function($scope, $state, $http) {
 
-	var vm = this;
-	$scope.testMessage = "This is /login.";
+	$scope.vm = this;
 
 	$scope.doLogin = function() {
+		
+		// ajax
+		
+
+		// navigation
 		$state.go('dashboard');
 	}
 

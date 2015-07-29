@@ -1,0 +1,26 @@
+<!-- begin ui-view -->
+<div layout="column" layout-fill>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+		  <span>GodsEye | Admin</span>
+		  <!-- fill up the space between left and right area -->
+		  <span flex></span>
+		  <md-button>Dashboard</md-button>
+		  <md-button ng-click="openLeftMenu()">Menu</md-button>
+		  <md-button ng-click="logout()">Logout</md-button>
+		</div>
+	</md-toolbar>
+	<md-sidenav md-component-id="left" class="md-sidenav-left">
+	  <md-content>
+	  	<md-card class="menuTitle md-whiteframe-z4">
+	  		<p layout layout-align="center center">Menu</p>
+	  	</md-card>
+	  	<md-card ng-click="goToArchives()" class="md-whiteframe-z2">
+	  		<p layout layout-align="center center">Manage Archives</p>
+	  	</md-card>
+	  	<md-card ng-click="goToStreams()" class="md-whiteframe-z2">
+	  		<p layout layout-align="center center">Manage Streams</p>
+	  	</md-card>
+	  </md-content>
+	</md-sidenav>
+</div>

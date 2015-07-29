@@ -3,5 +3,6 @@ var GodsEye = angular.module('GodsEye', [
 		'ngAnimate',
 		'ui.router',
 		'appRouter',
-		'loginCtrl'
+		'loginCtrl',
+		'dashboardCtrl'
 ]);
