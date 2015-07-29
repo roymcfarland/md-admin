@@ -17,5 +17,10 @@ appRouter.config(function($stateProvider, $urlRouterProvider) {
 			templateUrl: '../views/dashboard.html',
 			controller: 'dashboardController'
 		})
+		.state('categories', {
+			url: '/categories',
+			templateUrl: '../views/categories.html',
+			controller: 'categoriesController'
+		})
 
 });

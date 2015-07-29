@@ -9,6 +9,10 @@ dashboardCtrl.controller('dashboardController', ['$scope', '$state', '$http', '$
 		$mdSidenav('left').toggle();
 	}
 
+	// navigation
+	$scope.goToCategories = function() {
+		$state.go('categories');
+	}
 
 	$scope.doLogout = function() {
 

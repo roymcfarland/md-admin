@@ -4,5 +4,6 @@ var GodsEye = angular.module('GodsEye', [
 		'ui.router',
 		'appRouter',
 		'loginCtrl',
-		'dashboardCtrl'
+		'dashboardCtrl',
+		'categoriesCtrl'
 ]);
