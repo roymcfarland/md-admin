@@ -13,6 +13,9 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 	$scope.goToCategories = function() {
 		$state.go('categories');
 	}
+	$scope.goToDashboard = function() {
+		$state.go('dashboard');
+	}
 
 	$scope.doLogout = function() {
 

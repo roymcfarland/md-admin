@@ -13,6 +13,9 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 	$scope.goToCategories = function() {
 		$state.go('categories');
 	}
+	$scope.goToDashboard = function() {
+		$state.go('dashboard');
+	}
 
 	$scope.doLogout = function() {
 
