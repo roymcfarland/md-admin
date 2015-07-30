@@ -1,6 +1,6 @@
-var dashboardCtrl = angular.module('dashboardCtrl', []);
+var streamsCtrl = angular.module('streamsCtrl', []);
 
-dashboardCtrl.controller('dashboardController', ['$scope', '$state', '$http', '$mdSidenav', function($scope, $state, $http, $mdSidenav) {
+streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSidenav', function($scope, $state, $http, $mdSidenav) {
 
 	$scope.vm = this;
 
@@ -12,12 +12,6 @@ dashboardCtrl.controller('dashboardController', ['$scope', '$state', '$http', '$
 	// navigation
 	$scope.goToCategories = function() {
 		$state.go('categories');
-	}
-	$scope.goToArchives = function() {
-		$state.go('archives');
-	}
-	$scope.goToStreams = function() {
-		$state.go('streams');
 	}
 
 	$scope.doLogout = function() {

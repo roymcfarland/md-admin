@@ -27,5 +27,10 @@ appRouter.config(function($stateProvider, $urlRouterProvider) {
 			templateUrl: '../views/archives.html',
 			controller: 'archivesController'
 		})
+		.state('streams', {
+			url: '/streams',
+			templateUrl: '../views/streams.html',
+			controller: 'streamsController'
+		})
 
 });
