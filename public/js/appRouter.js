@@ -22,5 +22,10 @@ appRouter.config(function($stateProvider, $urlRouterProvider) {
 			templateUrl: '../views/categories.html',
 			controller: 'categoriesController'
 		})
+		.state('archives', {
+			url: '/archives',
+			templateUrl: '../views/archives.html',
+			controller: 'archivesController'
+		})
 
 });
