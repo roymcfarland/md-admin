@@ -27,6 +27,48 @@
 	  </md-content>
 	</md-sidenav>
 	<div layout="row">
+
+	<md-content flex offset="5" layout-padding>
+
+		<h2 layout layout-align="center center">Categories</h2>
+
+		<!-- cards -->
+		<md-card class="md-whiteframe-z4" ng-repeat="category in categories">
+			<md-card-content>
+				<div layout="row">
+					<h3 layout layout-align="center center" flex>{{category.name}}</h3>
+				</div>
+				<div layout="row" flex offset="75">
+					<md-button class="md-raised md-primary" ng-click="deleteCategory(category)" flex>Delete</md-button>
+				</div>
+			</md-card-content>
+		</md-card>
+
+	</md-content>
+
+	<md-content flex="15" layout-padding></md-content>
+
+	<md-content flex="35" layout-padding>
+		
+		<h2 layout layout-align="center center">Add Category</h2>
+
+		<md-card class="md-whiteframe-z2">
+		  <md-card-content>
+		    <md-input-container flex>
+		      <label>Name</label>
+		      <input ng-model="categoryName">
+		    </md-input-container>
+		    <md-input-container flex offset="75">
+		      <md-button class="md-raised md-primary">Save</md-button>
+		    </md-input-container>
+		  </md-card-content>
+		</md-card>
+
+	</md-content>
+
+	<md-content flex="10" layout-padding></md-content>
+
+	<!--
 	  <md-content flex offset="25" layout-padding>
 	    <md-card class="md-whiteframe-z2">
 	      <h2 layout layout-align="center center">Add New Category</h2>
@@ -53,5 +95,8 @@
 	    </md-card>
 	  </md-content>
 	  <md-content flex="25" layout-padding></md-content>
+	-->
+
+
 	</div>
 </div>

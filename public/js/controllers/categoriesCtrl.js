@@ -27,6 +27,10 @@ categoriesCtrl.controller('categoriesController', ['$scope', '$state', '$http', 
 	}
 
 
+	/////////////////////////////
+	////////// init() ///////////
+	/////////////////////////////
+
 	$scope.init = function() {
 
 		// ajax
@@ -45,7 +49,47 @@ categoriesCtrl.controller('categoriesController', ['$scope', '$state', '$http', 
 
 			})
 
-	}
+	};
 	$scope.init();
+
+
+
+	/////////////////////////////
+	////// deleteCatgory() //////
+	/////////////////////////////
+
+	$scope.deleteCategory = function(category) {
+
+		// ajax
+		var payload = {
+			username: window.localStorage['username'],
+			token: window.localStorage['token'],
+			masterCategory: category.name
+		}
+		// console.log(payload);
+		
+		$http.post('http://snaportationvm.cloudapp.net/api/category/delete-master', payload)
+			.success(function(data, status) {
+				console.log("### SUCCESS ###");
+				console.log("data:", data);
+				console.log("status:", status);
+
+				$scope.init();
+
+			})
+			.error(function(data, status) {
+				console.log("### ERROR ###");
+				console.log("data:", data);
+				console.log("status:", status);
+			})
+
+	};
+
+
+
+
+
+
+
 
 }]);
