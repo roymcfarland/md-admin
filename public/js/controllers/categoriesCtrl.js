@@ -87,7 +87,39 @@ categoriesCtrl.controller('categoriesController', ['$scope', '$state', '$http', 
 
 
 
+	/////////////////////////////
+	//////// addCatgory() ///////
+	/////////////////////////////
 
+	$scope.addCategory = function(category) {
+
+		// ajax
+		var payload = {
+			username: window.localStorage['username'],
+			token: window.localStorage['token'],
+			name: category,
+			subCategory: 'Test Sub',
+			description: '',
+			imageUrl: ''
+		}
+		//console.log(payload);
+		
+		$http.post('http://snaportationvm.cloudapp.net/api/category/add-master', payload)
+			.success(function(data, status) {
+				console.log("### SUCCESS ###");
+				console.log("data:", data);
+				console.log("status:", status);
+
+				$scope.init();
+
+			})
+			.error(function(data, status) {
+				console.log("### ERROR ###");
+				console.log("data:", data);
+				console.log("status:", status);
+			})
+
+	};
 
 
 
