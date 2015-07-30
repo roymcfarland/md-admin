@@ -13,7 +13,7 @@
 	<md-sidenav md-component-id="left" class="md-sidenav-left">
 	  <md-content>
 	  	<md-card class="menuTitle md-whiteframe-z4">
-	  		<p layout layout-align="center center">Menu</p>
+	  		<p layout layout-align="center center"></p>
 	  	</md-card>
 	  	<md-card ng-click="goToArchives()" class="md-whiteframe-z2">
 	  		<p layout layout-align="center center">Manage Archives</p>
@@ -26,4 +26,16 @@
 	  	</md-card>
 	  </md-content>
 	</md-sidenav>
+	<div layout="row" flex>
+		<md-content flex offset="30" layout-padding>
+		  <md-card class="md-whiteframe-z2" flex>
+		    <md-card-content layout="row">
+				<md-button class="md-raised md-primary" flex="30" ng-click="goToArchives()">Archives</md-button>
+				<md-button class="md-raised md-primary" flex="30" ng-click="goToStreams()">Streams</md-button>
+				<md-button class="md-raised md-primary" flex="30" ng-click="goToCategories()">Categories</md-button>
+		    </md-card-content>
+		  </md-card>
+		</md-content>
+		<md-content flex="30" layout-padding></md-content>
+	</div>
 </div>
