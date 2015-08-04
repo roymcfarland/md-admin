@@ -56,9 +56,10 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 
 		$http.get('http://snaportationvm.cloudapp.net/api/archive/get-all?username=' + $scope.username + '&token=' + $scope.token)
 			.success(function(data, status) {
-				console.log('### SUCCESS ###');
-				console.log('data:', data);
-				console.log('status:', status);
+				// console.log('### SUCCESS ###');
+				console.log('data.success:', data.success);
+				// console.log('status:', status);
+				$scope.archives = data.success;
 			})
 			.error(function(data, status) {
 				console.log("error data:", data);
@@ -67,5 +68,14 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 
 	}
 	$scope.init();
+
+
+	/////////////////////////////
+	///// deleteArchive() ///////
+	/////////////////////////////
+	
+	$scope.deleteArchive = function(archive) {
+		
+	}
 
 }]);

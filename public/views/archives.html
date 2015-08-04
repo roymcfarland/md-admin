@@ -26,8 +26,25 @@
 	  	</md-card>
 	  </md-content>
 	</md-sidenav>
-	<div>
-		<h1>Hello Archives!</h1>
+	<div layout="row" flex>
+		<md-content flex offset="30" layout-padding>
+			<md-card class="md-whiteframe-z4">
+				<md-card-content layout layout-align="center center">
+					<h2>Archives Flagged As Inappropriate</h2>
+				</md-card-content>
+			</md-card>
+			<md-card class="md-whiteframe-z4" ng-repeat="archive in archives" flex>
+				<md-card-content>
+					<div layout="row" flex>
+						<h2>{{archive.name}}</h2>
+					</div>
+					<div layout="row" flex offset="75">
+						<md-button class="md-raised md-primary" ng-click="deleteAchive(archive)" flex>Delete</md-button>
+					</div>
+				</md-card-content>
+			</md-card>
+		</md-content>
+		<md-content flex="30" layout-padding></md-content>
 	</div>
 
 
