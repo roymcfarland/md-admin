@@ -9,6 +9,7 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 		$mdSidenav('left').toggle();
 	}
 
+
 	// navigation
 	$scope.goToCategories = function() {
 		$state.go('categories');
@@ -16,7 +17,12 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 	$scope.goToDashboard = function() {
 		$state.go('dashboard');
 	}
+	$scope.goToStreams = function() {
+		$state.go('streams');
+	}
 
+
+	// logout
 	$scope.doLogout = function() {
 
 		// reset localStorage
@@ -27,5 +33,12 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 		$state.go('login');
 
 	}
+
+
+	// init
+	$scope.init = function() {
+
+	}
+	$scope.init();
 
 }]);

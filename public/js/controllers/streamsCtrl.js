@@ -9,6 +9,7 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 		$mdSidenav('left').toggle();
 	}
 
+
 	// navigation
 	$scope.goToCategories = function() {
 		$state.go('categories');
@@ -20,6 +21,8 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 		$state.go('archives');
 	}
 
+
+	// logout
 	$scope.doLogout = function() {
 
 		// reset localStorage
@@ -30,5 +33,12 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 		$state.go('login');
 
 	}
+
+
+	// init
+	$scope.init = function() {
+
+	}
+	$scope.init();
 
 }]);
