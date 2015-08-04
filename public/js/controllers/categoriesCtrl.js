@@ -4,7 +4,10 @@ categoriesCtrl.controller('categoriesController', ['$scope', '$state', '$http', 
 
 	$scope.vm = this;
 
-	// sidenav
+	/////////////////////////////
+	/////// sidenav menu ////////
+	/////////////////////////////
+
 	$scope.openLeftMenu = function() {
 		$mdSidenav('left').toggle();
 	}

@@ -4,13 +4,19 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 
 	$scope.vm = this;
 
-	// sidenav
+	/////////////////////////////
+	/////// sidenav menu ////////
+	/////////////////////////////
+
 	$scope.openLeftMenu = function() {
 		$mdSidenav('left').toggle();
 	}
 
 
-	// navigation
+	/////////////////////////////
+	//////// navigation /////////
+	/////////////////////////////
+
 	$scope.goToCategories = function() {
 		$state.go('categories');
 	}
@@ -22,7 +28,10 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 	}
 
 
-	// logout
+	/////////////////////////////
+	//////// doLogout() /////////
+	/////////////////////////////
+
 	$scope.doLogout = function() {
 
 		// reset localStorage
@@ -35,8 +44,26 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 	}
 
 
-	// init
+	/////////////////////////////
+	////////// init() ///////////
+	/////////////////////////////
+
 	$scope.init = function() {
+
+		// ajax
+		$scope.username = window.localStorage['username'];
+		$scope.token = window.localStorage['token'];
+
+		$http.get('http://snaportationvm.cloudapp.net/api/archive/get-all?username=' + $scope.username + '&token=' + $scope.token)
+			.success(function(data, status) {
+				console.log('### SUCCESS ###');
+				console.log('data:', data);
+				console.log('status:', status);
+			})
+			.error(function(data, status) {
+				console.log("error data:", data);
+				console.log("error status:", status);
+			})
 
 	}
 	$scope.init();
