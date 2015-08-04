@@ -9,11 +9,25 @@ categoriesCtrl.controller('categoriesController', ['$scope', '$state', '$http', 
 		$mdSidenav('left').toggle();
 	}
 
-	// navigation
+
+	/////////////////////////////
+	//////// navigation /////////
+	/////////////////////////////
+
 	$scope.goToDashboard = function() {
 		$state.go('dashboard');
 	}
+	$scope.goToArchives = function() {
+		$state.go('archives');
+	}
+	$scope.goToStreams = function() {
+		$state.go('streams');
+	}
 
+
+	/////////////////////////////
+	///////// logout() //////////
+	/////////////////////////////
 
 	$scope.doLogout = function() {
 
