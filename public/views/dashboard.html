@@ -28,7 +28,18 @@
 	</md-sidenav>
 	<div layout="row" flex>
 		<md-content flex offset="30" layout-padding>
-		  <md-card class="md-whiteframe-z2" flex>
+		  <md-card class="md-whiteframe-z4" flex>
+		  	<md-card-content layout="row">
+		  	  <h2 layout layout-align="center center" flex offset="30">Admin Controls</h2>
+		  	  <p layout layout-align="center center" flex="30"></p>
+		  	</md-card-content>
+		  </md-card>
+		</md-content>
+		<md-content flex="30" layout-padding></md-content>
+	</div>
+	<div layout="row" flex>
+		<md-content flex offset="30" layout-padding>
+		  <md-card class="md-whiteframe-z4" flex>
 		    <md-card-content layout="row">
 				<md-button class="md-raised md-primary" flex="30" ng-click="goToArchives()">Archives</md-button>
 				<md-button class="md-raised md-primary" flex="30" ng-click="goToStreams()">Streams</md-button>
