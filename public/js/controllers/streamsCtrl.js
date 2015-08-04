@@ -16,6 +16,9 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 	$scope.goToDashboard = function() {
 		$state.go('dashboard');
 	}
+	$scope.goToArchives = function() {
+		$state.go('archives');
+	}
 
 	$scope.doLogout = function() {
 
