@@ -95,9 +95,8 @@ categoriesCtrl.controller('categoriesController', ['$scope', '$state', '$http', 
 
 			})
 			.error(function(data, status) {
-				console.log("### ERROR ###");
-				console.log("data:", data);
-				console.log("status:", status);
+				console.log("error data:", data);
+				console.log("error status:", status);
 			})
 
 	};
