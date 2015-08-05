@@ -26,10 +26,27 @@
 	  	</md-card>
 	  </md-content>
 	</md-sidenav>
-	<div>
-		<h1>Hello Streams!</h1>
+	<div layout="row" flex>
+		<md-content flex offset="20" layout-padding>
+			<md-card class="md-whiteframe-z4">
+				<md-card-content layout layout-align="center center">
+					<h2>Streams Flagged As Inappropriate</h2>
+				</md-card-content>
+			</md-card>
+			<md-card class="md-whiteframe-z4" ng-repeat="stream in inappropriateStreams" flex>
+				<md-card-content>
+					<div layout="row" flex>
+						<h2 layout layout-align="center center">Title: {{stream.name}}</h2>
+					</div>
+					<div layout="row" flex>
+						<h4 layout layout-align="center center">Description: {{stream.description}}</h4>
+					</div>
+					<div layout="row" flex offset="75">
+						<md-button class="md-raised md-primary" ng-click="deleteStream(stream)" flex>Delete</md-button>
+					</div>
+				</md-card-content>
+			</md-card>
+		</md-content>
+		<md-content flex="20" layout-padding></md-content>
 	</div>
-
-
-
 </div>
