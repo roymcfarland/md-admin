@@ -57,6 +57,10 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 			.success(function(data, status) {
 				console.log("### SUCCESS ###");
 				$scope.streams = data.success;
+				console.log("$scope.streams:", $scope.streams);
+
+				$scope.sortStreams($scope.streams);
+
 			})
 			.error(function(data, status) {
 				console.log("### ERROR ###");
@@ -64,6 +68,29 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 
 	}
 	$scope.init();
+
+
+	/////////////////////////////
+	/////// sortStreams() ///////
+	/////////////////////////////
+	
+	$scope.sortStreams = function(arr) {
+
+		$scope.inappropriateStreams = [];
+
+		for (var i = 0; i < arr.length; i ++) {
+			if ($scope.streams[i].flaggedAsInnapropriate.length > 0) {
+				var flaggedStream = $scope.streams[i];
+				$scope.inappropriateStreams.push(flaggedStream)
+			}
+			else {
+				
+				// do nothing
+
+			}
+		}
+
+	}
 
 
 	/////////////////////////////
