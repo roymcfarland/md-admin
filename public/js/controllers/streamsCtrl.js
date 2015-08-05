@@ -4,13 +4,19 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 
 	$scope.vm = this;
 
-	// sidenav
+	/////////////////////////////
+	/////// sidenav menu ////////
+	/////////////////////////////
+
 	$scope.openLeftMenu = function() {
 		$mdSidenav('left').toggle();
 	}
 
 
-	// navigation
+	/////////////////////////////
+	/////// navigation //////////
+	/////////////////////////////
+
 	$scope.goToCategories = function() {
 		$state.go('categories');
 	}
@@ -22,7 +28,10 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 	}
 
 
-	// logout
+	/////////////////////////////
+	//////// logout() ///////////
+	/////////////////////////////
+
 	$scope.doLogout = function() {
 
 		// reset localStorage
@@ -35,10 +44,36 @@ streamsCtrl.controller('streamsController', ['$scope', '$state', '$http', '$mdSi
 	}
 
 
-	// init
+	/////////////////////////////
+	///////// init() ////////////
+	/////////////////////////////
+
 	$scope.init = function() {
+
+		$scope.username = window.localStorage['username'];
+		$scope.token = window.localStorage['token'];
+
+		$http.get('http://snaportationvm.cloudapp.net/api/stream/get-all?username=' + $scope.username + '&token=' + $scope.token)
+			.success(function(data, status) {
+				console.log("### SUCCESS ###");
+				$scope.streams = data.success;
+			})
+			.error(function(data, status) {
+				console.log("### ERROR ###");
+			})
 
 	}
 	$scope.init();
+
+
+	/////////////////////////////
+	///// deleteStream() ////////
+	/////////////////////////////
+	
+	$scope.deleteStream = function(stream) {
+	
+		console.log("stream:", stream);
+	
+	}
 
 }]);

@@ -4,6 +4,7 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 
 	$scope.vm = this;
 
+
 	/////////////////////////////
 	/////// sidenav menu ////////
 	/////////////////////////////
