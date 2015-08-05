@@ -56,9 +56,7 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 
 		$http.get('http://snaportationvm.cloudapp.net/api/archive/get-all?username=' + $scope.username + '&token=' + $scope.token)
 			.success(function(data, status) {
-				// console.log('### SUCCESS ###');
-				console.log('data.success:', data.success);
-				// console.log('status:', status);
+
 				$scope.archives = data.success;
 
 				$scope.sortArchive($scope.archives);
@@ -83,14 +81,12 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 
 		for (var i = 0; i < arr.length; i ++) {
 			if ($scope.archives[i].flaggedAsInapropriate.length > 0) {
-				// console.log("### FOUND ###");
 				var flaggedArchive = $scope.archives[i];
 				$scope.inappropriateArchives.push(flaggedArchive)
-				// console.log("$scope.inappropriateArchives:", $scope.inappropriateArchives);
 			}
 			else {
 				
-				// do nothing if archives are not flagged as inappropriate
+				// do nothing
 
 			}
 		}
@@ -110,10 +106,10 @@ archivesCtrl.controller('archivesController', ['$scope', '$state', '$http', '$md
 			token: window.localStorage['token'],
 			id: archive.id
 		};
-		// console.log("payload:", payload);
+
 		$http.post('http://snaportationvm.cloudapp.net/api/archive/delete', payload)
 			.success(function(data, status) {
-				console.log("### SUCCESS ###");
+				// do nothing
 			})
 			.error(function(data, status) {
 				console.log("error data:", data);
