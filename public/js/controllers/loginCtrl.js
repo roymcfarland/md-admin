@@ -11,7 +11,7 @@ loginCtrl.controller('loginController', ['$scope', '$state', '$http', function($
 			username: username,
 			password: password
 		}
-		$http.post('//snaportationvm.cloudapp.net/auth/phone/login', payload)
+		$http.post('http://snaportationvm.cloudapp.net/auth/phone/login', payload)
 			.success(function(data, status) {
 				
 				// dynamically set username and token in localStorage
