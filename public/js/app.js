@@ -1,4 +1,4 @@
-var GodsEye = angular.module('GodsEye', [
+var GodsEye = angular.module('testApp', [
 		'ngMaterial',
 		'ngAnimate',
 		'ui.router',
